@@ -8,14 +8,15 @@
   --primary-dark: #204d8c;
   --border: #d5dbe5;
   --container: 1120px;
-  /* Type scale tuned to oversized header logo (192px) + page rhythm */
+  /* Type scale + hero rhythm */
   --fs-hero: clamp(3rem, 5vw + 1rem, 4.85rem);
   --fs-xl: clamp(1.9375rem, 3vw + 0.85rem, 3rem);
   --fs-panel: clamp(1.375rem, 2.1vw + 0.4rem, 2rem);
   --fs-large: clamp(1.0625rem, 1.3vw + 0.65rem, 1.3125rem);
   --fs-legal-page: clamp(2rem, 3.5vw, 2.75rem);
   /* Sticky header (~nav-shell min-height) + gap — anchors clear the bar */
-  --sticky-header-visual-height: 216px;
+  --header-logo-size: 88px;
+  --sticky-header-visual-height: 104px;
   --header-anchor-offset: calc(var(--sticky-header-visual-height) + 0.875rem);
 }
 
@@ -86,8 +87,8 @@ a {
 
 .logo img {
   display: block;
-  width: 192px;
-  height: 192px;
+  width: var(--header-logo-size);
+  height: var(--header-logo-size);
   object-fit: contain;
   background: transparent;
 }
