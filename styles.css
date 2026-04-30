@@ -14,6 +14,9 @@
   --fs-panel: clamp(1.375rem, 2.1vw + 0.4rem, 2rem);
   --fs-large: clamp(1.0625rem, 1.3vw + 0.65rem, 1.3125rem);
   --fs-legal-page: clamp(2rem, 3.5vw, 2.75rem);
+  /* Sticky header (~nav-shell min-height) + gap — anchors clear the bar */
+  --sticky-header-visual-height: 216px;
+  --header-anchor-offset: calc(var(--sticky-header-visual-height) + 0.875rem);
 }
 
 * {
@@ -29,6 +32,11 @@
   padding: 0;
   overflow: hidden;
   pointer-events: none;
+}
+
+main section[id],
+footer#legal {
+  scroll-margin-top: var(--header-anchor-offset);
 }
 
 html,
@@ -68,7 +76,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 216px;
+  min-height: var(--sticky-header-visual-height);
 }
 
 .logo {
@@ -500,7 +508,7 @@ textarea:focus {
     position: absolute;
     left: 4%;
     right: 4%;
-    top: 216px;
+    top: var(--sticky-header-visual-height);
     border: 1px solid var(--border);
     border-radius: 12px;
     background: #ffffff;
