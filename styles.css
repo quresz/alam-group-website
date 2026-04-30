@@ -15,7 +15,7 @@
   --fs-large: clamp(1.0625rem, 1.3vw + 0.65rem, 1.3125rem);
   --fs-legal-page: clamp(2rem, 3.5vw, 2.75rem);
   /* Compact header: logo drives bar height; anchors need extra padding than bar height */
-  --header-logo-size: 52px;
+  --header-logo-size: 312px;
   --sticky-header-visual-height: calc(var(--header-logo-size) + 14px);
   /* Generous offset so in-page links clear sticky bar (scroll-padding is most reliable) */
   --header-anchor-offset: calc(var(--sticky-header-visual-height) + 1.75rem);
@@ -85,10 +85,12 @@ a {
 .logo {
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .logo img {
   display: block;
+  flex-shrink: 0;
   width: var(--header-logo-size);
   height: var(--header-logo-size);
   object-fit: contain;
