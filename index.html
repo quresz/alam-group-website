@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=expanded-header-nav" />
+    <link rel="stylesheet" href="styles.css?v=contact-form" />
   </head>
   <body>
     <div id="top" class="page-top-anchor" aria-hidden="true"></div>
@@ -254,13 +254,54 @@
               related to partnership opportunities, co-investments, and founder/operator introductions.
             </p>
           </div>
-          <form class="contact-form">
+          <form
+            id="contactForm"
+            class="contact-form"
+            action="https://formsubmit.co/info@alamgroup.ca"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="Alam Group website inquiry" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <div class="field-honey" aria-hidden="true">
+              <label for="contact-honey">Company website</label>
+              <input
+                type="text"
+                id="contact-honey"
+                name="_honey"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+            <p id="contactFormStatus" class="contact-form-status" role="status" aria-live="polite"></p>
             <label for="name">Name</label>
-            <input type="text" id="name" placeholder="Your name" />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your name"
+              required
+              autocomplete="name"
+            />
             <label for="email">Email</label>
-            <input type="email" id="email" placeholder="you@example.com" />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+              autocomplete="email"
+            />
             <label for="message">Message</label>
-            <textarea id="message" rows="4" placeholder="How can we help?"></textarea>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              maxlength="4000"
+              placeholder="How can we help?"
+              required
+              autocomplete="off"
+            ></textarea>
             <button type="submit" class="btn btn-primary full-width">Send Inquiry</button>
           </form>
         </div>
@@ -284,6 +325,6 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=contact-form"></script>
   </body>
 </html>
