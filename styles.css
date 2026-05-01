@@ -99,8 +99,12 @@ a {
 
 .nav-links {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 1.125rem;
+  justify-content: flex-end;
+  gap: 0.65rem 0.95rem;
+  row-gap: 0.35rem;
+  max-width: min(100%, 54rem);
 }
 
 .nav-links a {
